@@ -2,15 +2,21 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import torchvision.transforms as transforms
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, random_split
 import torchvision
 import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageDraw
+from torch.utils.tensorboard import SummaryWriter
+import datetime
 
 batch_size = 64
 learning_rate = 0.001
 num_epochs = 10
+
+logdir = "tf_logs/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+writer = SummaryWriter(log_dir=logdir)
+
 model_path = "mnist_cnn.pth"
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -20,11 +26,37 @@ transform = transforms.Compose([
     transforms.Normalize((0.5,), (0.5,))
 ])
 
-train_dataset = torchvision.datasets.MNIST(root='./data', train=True, download=True, transform=transform)
-test_dataset = torchvision.datasets.MNIST(root='./data', train=False, download=True, transform=transform)
+train_dataset = torchvision.datasets.MNIST(root='./data',
+                                           train=True,
+                                           download=True,
+                                           transform=transform)
 
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+test_dataset = torchvision.datasets.MNIST(root='./data',
+                                          train=False,
+                                          download=True,
+                                          transform=transform)
+
+train_size = int(0.8 * len(train_dataset))
+val_size = len(train_dataset) - train_size
+
+train_subset, val_subset = random_split(train_dataset, [train_size, val_size])
+
+train_loader = DataLoader(dataset=train_subset,
+                          batch_size=batch_size,
+                          shuffle=True)
+
+test_loader = DataLoader(dataset=test_dataset,
+                         batch_size=batch_size,
+                         shuffle=False)
+
+val_loader = DataLoader(dataset=val_subset,
+                         batch_size=batch_size,
+                         shuffle=False)
+
+examples = iter(test_loader)
+example_data, example_targets = next(examples)
+img_grid = torchvision.utils.make_grid(example_data)
+writer.add_image('mnist_images', img_grid)
 
 class CNN(nn.Module):
     def __init__(self):
@@ -48,9 +80,12 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 def train():
-    model.train()
     for epoch in range(num_epochs):
+        model.train()
         running_loss = 0.0
+        correct = 0
+        total = 0
+
         for images, labels in train_loader:
             images, labels = images.to(device), labels.to(device)
 
@@ -62,27 +97,70 @@ def train():
             optimizer.step()
 
             running_loss += loss.item()
+            _, predicted = torch.max(outputs, 1)
+            correct += (predicted == labels).sum().item()
+            total += labels.size(0)
 
-        print(f"Epoch [{epoch+1}/{num_epochs}], Loss: {running_loss/len(train_loader):.4f}")
+        train_loss = running_loss / len(train_loader)
+        train_accuracy = 100 * correct / total
 
+        val_loss, val_accuracy = validate()
+
+        print(f"Epoch [{epoch + 1}/{num_epochs}]")
+        print(f"Train Loss: {train_loss:.4f}, Train Accuracy: {train_accuracy:.2f}%, Val Loss: {val_loss:.4f}, Val Accuracy: {val_accuracy:.2f}%")
+
+        writer.add_scalar('Training Loss', train_loss, epoch + 1)
+        writer.add_scalar('Training Accuracy', train_accuracy, epoch + 1)
+        writer.add_scalar('Validation Loss', val_loss, epoch + 1)
+        writer.add_scalar('Validation Accuracy', val_accuracy, epoch + 1)
+
+    writer.close()
     torch.save(model.state_dict(), model_path)
+
+def validate():
+    model.eval()
+    running_loss = 0.0
+    correct = 0
+    total = 0
+
+    with torch.no_grad():
+        for images, labels in val_loader:
+            images, labels = images.to(device), labels.to(device)
+
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+
+            running_loss += loss.item()
+            _, predicted = torch.max(outputs, 1)
+            correct += (predicted == labels).sum().item()
+            total += labels.size(0)
+
+    val_loss = running_loss / len(val_loader)
+    val_accuracy = 100 * correct / total
+
+    return val_loss, val_accuracy
+
+def test():
+    model.eval()
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for images, labels in test_loader:
+            images, labels = images.to(device), labels.to(device)
+
+            outputs = model(images)
+
+            _, predicted = torch.max(outputs, 1)
+            correct += (predicted == labels).sum().item()
+            total += labels.size(0)
+    print(f"Test Accuracy: {100 * correct / total:.2f}%")
 
 def predict(img):
     model.eval()
     with torch.no_grad():
-        output = model(img)
-        _, predicted = torch.max(output, 1)
+        outputs = model(img)
+        _, predicted = torch.max(outputs.data, 1)
         return predicted
-
-def evaluate():
-    correct = 0
-    total = 0
-    for image, label in test_loader:
-        image, label = image.to(device), label.to(device)
-        total += label.size(0)
-        correct += (predict(image) == label).sum().item()
-
-    print(f"Test Accuracy: {100 * correct / total:.2f}%")
 
 def load_model():
     model.load_state_dict(torch.load(model_path, map_location=device))
@@ -134,7 +212,7 @@ if __name__ == "__main__":
     except FileNotFoundError:
         print("No saved model found. Training a new model")
         train()
-        evaluate()
+        test()
 
     root = tk.Tk()
     app = DigitRecognizerApp(root)
