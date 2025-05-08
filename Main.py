@@ -22,9 +22,15 @@ model_path = "models/mnist_cnn_"+datetime.datetime.now().strftime("%Y%m%d-%H%M%S
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-transform = transforms.Compose([
+train_transform = transforms.Compose([
     transforms.RandomRotation(20),
     transforms.RandomCrop(28, padding=8),
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))
+])
+
+inference_transform = transforms.Compose([
+    transforms.Resize((28, 28)),
     transforms.ToTensor(),
     transforms.Normalize((0.5,), (0.5,))
 ])
@@ -32,12 +38,13 @@ transform = transforms.Compose([
 train_dataset = torchvision.datasets.MNIST(root='./data',
                                            train=True,
                                            download=True,
-                                           transform=transform)
+                                           transform=train_transform)
 
 test_dataset = torchvision.datasets.MNIST(root='./data',
                                           train=False,
                                           download=True,
-                                          transform=transform)
+                                          transform=inference_transform)
+
 
 train_size = int(0.8 * len(train_dataset))
 val_size = len(train_dataset) - train_size
@@ -221,7 +228,7 @@ class DigitRecognizerApp:
 
     def predict_digit(self):
         img = self.image.resize((28, 28))
-        img_tensor = transform(img).unsqueeze(0).to(device)
+        img_tensor = inference_transform(img).unsqueeze(0).to(device)
         digit = predict(img_tensor).item()
         print(f"Predicted Digit: {digit}")
         self.prediction_label.config(text=f"Prediction: {digit}")
