@@ -213,8 +213,9 @@ class DigitRecognizerApp:
         self.last_x, self.last_y = None, None
 
     def clear_canvas(self):
-        self.canvas.delete("all")
         self.image = Image.new("L", (560, 560), color='white')
+        self.canvas.delete("all")
+        self.image = Image.new("L", (560, 560), color=0)
         self.draw = ImageDraw.Draw(self.image)
         self.prediction_label.config(text="Prediction: None")
 
