@@ -4,27 +4,290 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1aebeec-46d5-486d-8af3-368700ddf9ad" name="Changes" comment="Added validation and integrated TensorBoard for performance monitoring">
+    <list default="true" id="f1aebeec-46d5-486d-8af3-368700ddf9ad" name="Changes" comment="Finalize GUI and fix drawing issues">
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0087d5f926ba47f9ba0a7f595d4da1b8_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0214b8224d1a4466aecfbbf62ded8026_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0516807dcdaa4c389f4279024a7103a2_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/05a729a9bd424ab8b9b378156ca9f39b_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/075748964ee44f009f9dd79b34a3d9db_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/07ffd6a0e49d4965aedb3c48d39e6d07_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/08133226f72c409caa2d1cc1f3b3d472_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0926836006394b56a1e6d71750c9da26_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/09db724bbe084bd28db9ed8cf2f4abc8_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0a6f4cf4a3244ffe9af12e1b7d5a12cf_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0b0f7ee1abaa46cfae4ed91bb9c94974_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0d2f2f5ec44f4f18bd0ecd84defb0303_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0d5f03cf615f422281584d18a8b37900_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0d84fc3cd76c4562afcfcf9a2481044e_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0e428a3670744ecfa367afd608352391_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/0e9d99b58fae4c01b00798ef236517b7_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/1013ce32275342d1859e6b3966fa9cf6_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/1044a55659bc48a1b5d4c9c568aefd0a_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/10cbc13f574a4efa8e760b5bb59dadb4_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/10ee8c89fc1747eea6de9b20022d630e_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/1231d33802144af8bb32df803e8787b7_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/12b5f02c76e8458589a69490f8124841_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/1501bf8ed1f84e598b7c39fba4e7148c_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/163ac2c17e4e478e9cafff0e45e39bca_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/175d4d9dc5614507aceaf601407aadf6_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/1859edd831cb4386a339072e7bec44b2_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/18b77b353b4a4263966585d65f36c50d_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/18f9e2db4644474996f42c25220fea1b_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/1d5274afb1d34a37818a655074f1e688_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/1e12d43e8b3b4d5889c71786e3c92496_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/1ecf7ccfee03406cb19b4f5837a5e8dc_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/201c951247fb481b8a9c4d4ca0fbc5c2_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/20486f5f9245402d89734903f7261cc0_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/209c5dadb9f6462c90188958e3373a8a_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/233c66bd2c844f8e9740d5f3c06ad75b_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/23d7a8ac5fae49088be29faf06542519_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/26e7dbd5bd6d4268a2989222af3cb9b4_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/275609b3449048878867da7ce51845df_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/27841b7962354bebb7cd3015d8b5c8c2_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/282d0502cf514c63af59d82d0a87020f_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/28618cf525cd4cc5a69fe07acd4d42c5_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/29fa5b2b6a534d099e2de372607f0934_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2a39adf3d0eb4eb383c27790e276afae_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2a7079f52e6d4226949cdc7fb2e461da_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2aba3ac203414755b76541ea17b8e80d_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2b7fe5f0e0a74663bdcd2eccea863625_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2b84b54900a442e8bacc86d740dc8bd8_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2b9eac7c22c64638a4c4d8a2bc96c334_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2cd647910860482abd3238bad75b6f20_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2d55b5e6238d46c79441a64f31501c08_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2d6a2cb24a3943f2950f7fb755db349f_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2d9d92d9a9a94117abfd29abf2c94934_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2db33c954b1347bc9a6532f4aa676be3_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2ebeb3d41781474d8b71d8c6abe82601_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/2edb128174b24372aa524a2e445570a9_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/326463bd7057474987f5440805f61089_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/3340215e8c7c454781c454d76db57c75_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/33cfb43c74cc448eb36d4b6995ef393d_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/35812c692be84ff2b02860f0ef9825db_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/36227ba90ee7450f832b73aa7a34c8f3_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/379852e826204c2ea7e9204ae1f14eb7_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/3852981049aa48d78eacd3f2aa397623_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/39960d545f884232a0b6270a7d3f88d9_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/3999aa244825442a9f93a0c38a3f7ab1_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/39f80cd8d6424dcd84250c3bbb97bf62_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/3ac3b5b7173f48f598931b82829ab3e9_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/3af9735d23714d12b892ce0bba1e1376_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/3d0636be911946b19e2fc5535c1dfb4d_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/3e943f5c56024c16a8ae3937087a7b9c_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/3f1a8ddd4eea4abd81cab5f27ac380bd_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/405e482bc43940e99e53b2fa17a9619e_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/417bd5d8efc54d31a24f83d5afa44de9_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/43660c446e4e41fd8937924f4a576e33_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/43a3326a584147f88f0b36f2a1332a7c_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/43e91defa93e4ed49eca4014645f7867_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/4a6dc58026244bb7b4d16fc155b623ce_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/4ac4211870a54032990aeb9999daf2f5_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/4cae3901528c45bdb485a54273e4e9bd_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/50e52a67d282460293d177da9ffb1658_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/5197f8ba92d64ff1bd6a94b6fac6c52b_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/51a31c8613b14d8ca8f49e2fbf391a49_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/52961a0fe12247009bd8e39d29061afd_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/538b268563f84b3ebcb8ba2bb135a26a_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/551c6598d1f14f5dacfafcb4a9ab9e16_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/560673725e764c06bdbbca3cd5b55783_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/5777f46afd1f4fe9ab28b060442c7f6d_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/582ea76533594dacad685d64557d61fe_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/584714ad73504e4a9509e775484f2956_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/586aeeffdadb43809adc0dcf58a854d9_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/5879310f16214a31955bd6efbaa850c2_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/5951f77c7b644996b4d1f585fd4c5184_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/5b1503cc46524071806a0f6bf9d6e9f9_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/5ba425ba533a4a99a558813c747bad43_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/5c0c233e32424d55b0c2680351be2acd_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/5cbdb53eb99640348f9c1d43abf66e1a_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/5d478630b89e455b83b81e12b8025849_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/5ee92966dbe04024bb7eb540257fbe2f_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/61837ef998c54b92be7f57b3ec49bb32_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/61c5c1f5caa24948ade0192423d0642c_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/63832d936b6e424f8fef625e757b14d8_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/6598ffe738a34b20b3b5773a7f46308a_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/665c2b919dc34d8281bfad3c7d7f6342_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/67e7a26a1546487eacbeda9d8d64c040_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/6b0b85331cb041b1a4e94ea8380c1548_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/6d118ea829ba48ee963fd6bc2bec5db1_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/6d999ef1c1974124bdc27143511fa63a_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/6f2a8e77de404522a3563d004d210e75_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/704099323a0746ad9f71e22e8b05c785_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/70a753022b6946c6ba8ad432dba79914_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/70e761f5e68d4e09b720f538ab654340_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/72e4e9d972ad4faebc860ad91f45bfd7_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/73fa2578a8d24854829f63bf67e1ff31_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/7473c6a78d664ecf8356619c6118f5d0_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/749793b32f6e494e992ddc6adad7541f_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/761bf741db14471e8c2316373f3307cf_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/76ce3d9793bf47da8c4042606fb3c017_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/77f869ebe6a343b2a4ed04b034d87e81_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/79070784ec0548caa3e01f9ec3ed4dad_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/7925e74869c84fe9b0159529a20e2641_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/7d31caaf89994b91901ebb20e9380320_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/7d3641a7341a4eb7827464465c34110b_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/7ffcd284e73f4a13b36fd7912d3f1cf2_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/81facd72aa3a418daa68ce9c532f06fc_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/82b311c6b25e455297756d30402c4b53_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/8361a408dcef47b597761f6dfbe8f75f_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/841ef8d9c9d74fc487f0c2a37c05276b_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/8509753a05ec40658927ba666f22d2cb_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/85f12a2fc6e14369a18475211a4c927f_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/86fec82044c748b590f0796429994df7_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/870c29022f9a46b8a717e6b1615c0f16_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/8999570832ec450ab4f0877d859e825d_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/8a0f5c6030bb47f49298576bc4f01bd2_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/8a3cb99961334ee99e1759a412d9e93b_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/8ade45f0a8e94ab3a86e1efcc5b4f591_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/8b550ed84dbc41b18b6e3ca6a7ca3c1a_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/8d767c23cd8b4c7ca5fee15889c4c70f_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/901ea674dcd64e32b45e4643273705fd_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/922a9ef0237746b6b3d24383ea8b1a65_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/92c26d3ec74b4dcdb96975094aa55422_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/951bdf7973f54683ac1c4afee78fe6cc_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/9548be6fff634714a49f7fcbe2217e03_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/955087c8aa774e0c870998071bf3565a_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/96f47b753e354ce68b3b77398a5c52b1_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/98cbce81bb104fa19f31eebf6b87ee7a_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/99a5916cc0e747fbbc806cc0fe99352f_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/9a12d5e717bc48e2bee2331986af59de_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/9abc6e88b8aa42a094ec293d5ce575e5_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/9d455e78af244e248361bb44ca073205_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/9d4a506f4790441288fadd3e255d3658_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/9e685a7c3741485799e3146bcb516c6e_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/9f77784b936543aebad6b026ad4345cc_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/9fdcceed80c34502a11d3298d4024073_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a10e37f048d74c6bba489febba962cbb_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a15aede3df7140678a27662ca64afc96_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a2279003a9f445a0b7fd8acae23bce54_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a329844aee2041149b3f97d1b1fdaf35_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a3405ad9d3724c399852a106dffefc47_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a4f2e18bb14440e18dd12eb2f623a45b_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a57d71d96d7b40a69c604a02d7d0f054_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a665e6c3481e41cfbcf00ce8668b0238_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a66b953d24354dafa6300705ff8b0cd2_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a6769bbc6ed346d2b05c99bfd70f38ad_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a7cc8f7b028641a6825899e5828f403f_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a7f0137fef5d44d183c639ac493b4fe3_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a8aa4203d02f4b5899f8df5c54e493c1_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a8c030f4ab054d74bb5ab21992ccec67_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a908482a10714e51b20940a3c3cd5951_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a9623be99ebf498bbbb82b059e323175_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/a9a18fcf42004961b6a8cf19dc0119da_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/aa588954456249e590b4515798aaa2a2_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/aae1a0b3d83b43a2b5667412292fa120_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/aaebbe5288f049a4a5106d2e76e8bb8d_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/aaef7ba34fb1473fa934717165e9e27d_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/ab3df1215a52428bbe544e4d4b103935_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/ab83efa90e344752936f6460e5eae968_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/abbeb9938d074eaaaea2e7a035b2dc1e_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/abed7acb00d843a887921b9ce28dc833_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/ac1faaa1963746e4b480593086d46053_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/ac206fd11dcc46898c965eb693ba5ec5_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/acf38bf955b64d838844df4982424a91_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/af36687821c64a09aaab4bc4b136a5b3_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/b3d035bafe9c45f1b40458c0338b0899_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/b4c0187254a24a28a92e264e8127ba33_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/b558fc302ea94303986bf5bdf815eb2a_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/b8dbde5924a24915bc242e76ab3dfc2a_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/bb5efb23dc124b258e76e25c40404489_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/bb7128c08d384d9fb0ef34b544af0ffc_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/bb7e67d8dd3f415483c556af86c35595_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/bc42640cafcd4ed3b5c6427711c1c2da_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/bcda322170514386a637d59a168d0b9b_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/bd0de26239c941ffa74f22f67db78336_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/bdf3baead4a64ffb91c2bd0a2b35053a_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/be8cafbb06cb4cba90a37b242a2facf6_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/bea10d6c54ac49e49d0c8d60fa49094a_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/bf214938f0d84bd997fa00289dca1e04_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c006f91590e84b1e8f6176486f6748b8_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c0b7476da72d458cae18e98bda765dc8_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c108b4b2bf6f4498a13886d76580ea52_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c12306a250dd40af897764bd3851b5dc_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c1ccfaedfc2f4cc1a6fe1ce850250e31_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c2b877e22dab4cfa84b9e1ce6c2e861f_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c3769c0b543d44aea33ab308f49f4996_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c597a706dae94b9797726d027ee41f69_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c6682e946a0640d9b5bd62640ed798b8_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c76068a02b9244b3abf50ef41aaca949_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c969f7434f3f45a88ea7b807267cdc56_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c9b7aa10ccfc494b966e5d6c006870eb_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/c9ecb61d906042b78c918ce9334f96c6_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/ca27dacf4c2d4c60bd580cd6d401f7ac_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/ca3cbe8ea9aa4c55bac388c97a6f50af_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/cb5474b138024a14b5a9dc674f88ac1b_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/cb86287c69a44283aaf157d58d181fa9_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/cbeec0c51c0b4cf38dfda66a35246ce7_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/cf0d633cb1c1489390895cb2f4821fd4_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/d0802513cbc84dd69848f00e5c350c65_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/d147ad440ef2498e84a118d801a9b11a_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/d16dae121c8f429d9b612c1a549041e3_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/d1d3e315c4d5407381132bdcc99f7e5e_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/d20143dc8bf24695955efd07281dbce0_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/d241bcc108714133a7635c1b34d96e23_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/d3702517bf1a4743a99787fdecf09932_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/d612198f098342d69461825a43e2b77e_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/d7e68fcf8efc4402bb339468ce9897de_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/db549f9c92d64a9d9eb643d8e42c7802_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/dc056649a18647b895c485d1363acfa7_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/dc987410a0594be9a18791f2a5671162_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/dd24290ca04e44649bec398efd805d6f_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/dd30a14225de421190a69021a8b10194_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/df9eaf4f333c4a61a9dfe3c896c6cf02_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e0a43917bd70408682f99a05bfd35f48_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e0d714e0605049c088669c463b9d03a1_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e1288e191e3e4bc58bd6dadd95597072_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e1c0d923b03940f5b75bea03537af122_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e24e5e270d1f435882c633400ad65523_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e2f982993faf4a53aac5f221eb9ae2ed_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e3fbcf5f7d8e4d89b9716995012133f3_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e4b1658672664fbb8bb8be2fd4be9d9e_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e4e5b22b22f449ed8e48bd81721c697d_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e63c8f8ae7384f79b0d5265ae3a54248_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e7efd99602d349e697042fcc97330328_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e924462017244e98ac9ab403bd03ebef_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/e9475215eb4d46828345968d403f1eef_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/ec1a883b31d446b1830aa2bec7a4b25e_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/ec5e68f42bb94105be5bc11f948e364f_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/eca7e589adc14f8a8039c7621c45aac7_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/edf60d0c043443b79965dafbe99317e3_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/ee58bb7a91d84781a959ddbbb272c30c_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/ef57428d2b7f4482a129a81924d2ffeb_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/f02244fd440d4965824fbe2b3085ca05_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/f193523dc0664331a4634e19ee96600b_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/f2271fe80e794891b8cefcc9795169b4_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/f2b5cb6f1fb84ba381ade5aa8ca46da9_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/f360fea056bf45db8013bcc0f767df04_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/f6f0d47143284588b471f76ad497da0d_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/f786122ab6c14cf3af9ddbf7354867c0_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/f9447b1786ef4e17adb145a6ca433b0d_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fa096e5eee2e4ca78c107708ed75b4dc_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fa622ab8c2a64b50b56a524bdd45e8d4_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fa919e18aa7b43a4bd8f1ae87f21b769_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fad1aeff365040d2802019ea178b56ac_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fb2e882c77194ff6a626d39d68a7f26e_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fb494fed388244078a3f26fe38d71bb4_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fb7f82987c4f428a9ffc5eb4bbd898b4_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fc380169140b4009a1cd05e2ea415b81_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fc3d587232294d19882170be012d9464_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fdf83d0580234e9b909fdeabdcaadcea_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_test_dataset/fe06c20f1d2a4baab775ea731b7ce786_6.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/digit_recognizer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -52,43 +315,9 @@
     &quot;Python.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;finalizing&quot;
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Users\jakub\PycharmProjects\digit-recognition\models" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="digit-recognition" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.Main" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -108,6 +337,21 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -118,7 +362,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="finalizing" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>

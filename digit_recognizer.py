@@ -1,30 +1,29 @@
+import os
+import uuid
+import datetime
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import torchvision.transforms as transforms
-from torch.utils.data import DataLoader, random_split
-import torchvision
-import tkinter as tk
-from tkinter import messagebox, filedialog
-from PIL import Image, ImageDraw
+from torch.utils.data import DataLoader, random_split, Dataset
 from torch.utils.tensorboard import SummaryWriter
-import datetime
+import torchvision
+import torchvision.transforms as transforms
+from PIL import Image, ImageDraw
+import tkinter as tk
+from tkinter import messagebox, filedialog, simpledialog
 
 batch_size = 64
+test_batch_size = 256
 learning_rate = 0.001
 weight_decay = 1e-4
-num_epochs = 10
-
-logdir = "tf_logs/"+datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-writer = SummaryWriter(log_dir=logdir)
-
-model_path = "models/mnist_cnn_"+datetime.datetime.now().strftime("%Y%m%d-%H%M%S")+".pth"
-
+num_epochs = 64
+writer = None
+model_path = None
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 train_transform = transforms.Compose([
     transforms.RandomRotation(20),
-    transforms.RandomCrop(28, padding=8),
+    transforms.RandomCrop(28, padding=4),
     transforms.ToTensor(),
     transforms.Normalize((0.5,), (0.5,))
 ])
@@ -34,6 +33,36 @@ inference_transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize((0.5,), (0.5,))
 ])
+
+class TestImageDataset(Dataset):
+    def __init__(self):
+        self.img_dir ='./custom_test_dataset'
+        self.image_files = [f for f in os.listdir(self.img_dir) if f.endswith('.png')]
+        self.transform = inference_transform
+
+    def __len__(self):
+        return len(self.image_files)
+
+    def __getitem__(self, idx):
+        img_name = self.image_files[idx]
+        img_path = os.path.join(self.img_dir, img_name)
+
+        label = int(img_name.split('_')[-1].split('.')[0])
+
+        image = Image.open(img_path)
+
+        if self.transform:
+            image = self.transform(image)
+
+        return image, label
+
+custom_test_dataset = TestImageDataset()
+
+custom_test_loader = torch.utils.data.DataLoader(
+    custom_test_dataset,
+    batch_size=test_batch_size,
+    shuffle=False
+)
 
 train_dataset = torchvision.datasets.MNIST(root='./data',
                                            train=True,
@@ -118,13 +147,11 @@ def train():
         print(f"Epoch [{epoch + 1}/{num_epochs}]")
         print(f"Train Loss: {train_loss:.4f}, Train Accuracy: {train_accuracy:.2f}%, Val Loss: {val_loss:.4f}, Val Accuracy: {val_accuracy:.2f}%")
 
-        writer.add_scalar('Training Loss', train_loss, epoch + 1)
-        writer.add_scalar('Training Accuracy', train_accuracy, epoch + 1)
-        writer.add_scalar('Validation Loss', val_loss, epoch + 1)
-        writer.add_scalar('Validation Accuracy', val_accuracy, epoch + 1)
-
-    writer.close()
-    torch.save(model.state_dict(), model_path)
+        if writer is not None:
+            writer.add_scalar('Training Loss', train_loss, epoch + 1)
+            writer.add_scalar('Training Accuracy', train_accuracy, epoch + 1)
+            writer.add_scalar('Validation Loss', val_loss, epoch + 1)
+            writer.add_scalar('Validation Accuracy', val_accuracy, epoch + 1)
 
 def validate():
     model.eval()
@@ -149,20 +176,59 @@ def validate():
 
     return val_loss, val_accuracy
 
+
+
 def test():
     model.eval()
+    results = {}
     correct = 0
     total = 0
     with torch.no_grad():
         for images, labels in test_loader:
             images, labels = images.to(device), labels.to(device)
-
             outputs = model(images)
-
             _, predicted = torch.max(outputs, 1)
             correct += (predicted == labels).sum().item()
             total += labels.size(0)
-    print(f"Test Accuracy: {100 * correct / total:.2f}%")
+
+    results['test_accuracy'] = 100 * correct / total
+    print(f"Test Accuracy: {results['test_accuracy']:.2f}%")
+
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for images, labels in custom_test_loader:
+            images, labels = images.to(device), labels.to(device)
+            outputs = model(images)
+            _, predicted = torch.max(outputs, 1)
+            correct += (predicted == labels).sum().item()
+            total += labels.size(0)
+
+    results['custom_test_accuracy'] = 100 * correct / total
+    print(f"Custom Test Accuracy: {results['custom_test_accuracy']:.2f}%")
+
+    global writer
+    if writer is not None:
+        try:
+            writer.add_scalar('Test Accuracy', results['test_accuracy'])
+            writer.add_scalar('Custom Test Accuracy', results['custom_test_accuracy'])
+        except Exception as e:
+            print(f"Warning: Could not write to TensorBoard: {e}")
+
+    global model_path
+    try:
+        if model_path is None:
+            timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+            model_path = f"models/mnist_cnn_{timestamp}.pth"
+            print(f"No model path specified, saving to: {model_path}")
+
+        os.makedirs(os.path.dirname(model_path), exist_ok=True)
+        torch.save(model.state_dict(), model_path)
+    except Exception as e:
+        print(f"Warning: Could not save model: {e}")
+
+    return results
+
 
 def predict(img):
     model.eval()
@@ -180,11 +246,13 @@ class DigitRecognizerApp:
         self.is_model_loaded = False
         self.last_x, self.last_y = None, None
 
+        self.digit = None
+
         self.canvas = tk.Canvas(master, width=560, height=560, bg="white", relief="ridge", borderwidth=2)
-        self.canvas.grid(row=0, column=0, columnspan=3, pady=10)
+        self.canvas.grid(row=0, column=0, columnspan=4, pady=10)
 
         self.prediction_label = tk.Label(master, text="Prediction: None", font=("Arial", 14))
-        self.prediction_label.grid(row=1, column=0, columnspan=3, pady=5)
+        self.prediction_label.grid(row=1, column=0, columnspan=4, pady=5)
 
         self.load_button = tk.Button(master, text="Load Model", command=self.load_model, bg="#4CAF50", fg="white")
         self.load_button.grid(row=2, column=0, padx=5, pady=5)
@@ -192,8 +260,19 @@ class DigitRecognizerApp:
         self.train_button = tk.Button(master, text="Train model", command=self.train_model, bg="#008CBA", fg="white")
         self.train_button.grid(row=2, column=1, padx=5, pady=5)
 
+        self.test_button = tk.Button(master, text="Test Model", command=self.run_test, bg="#FF9800", fg="white")
+        self.test_button.grid(row=3, column=2, padx=5, pady=5)
+
         self.clear_button = tk.Button(master, text="Clear", command=self.clear_canvas, bg="#FF5733", fg="white")
         self.clear_button.grid(row=2, column=2, padx=5, pady=5)
+
+        self.save_correct_button = tk.Button(master, text="Save as Correct", command=self.save_as_correct, bg="#4CAF50",
+                                             fg="white")
+        self.save_correct_button.grid(row=3, column=0, padx=5, pady=5)
+
+        self.save_incorrect_button = tk.Button(master, text="Save as Incorrect", command=self.save_as_incorrect,
+                                               bg="#f44336", fg="white")
+        self.save_incorrect_button.grid(row=3, column=1, padx=5, pady=5)
 
         self.canvas.bind("<B1-Motion>", self.paint)
         self.canvas.bind("<ButtonRelease-1>", self.reset_last_position)
@@ -224,16 +303,25 @@ class DigitRecognizerApp:
         self.canvas.delete("all")
         self.image = Image.new("L", (560, 560), color=0)
         self.draw = ImageDraw.Draw(self.image)
+        self.digit = None
         self.prediction_label.config(text="Prediction: None")
 
     def predict_digit(self):
         img = self.image.resize((28, 28))
         img_tensor = inference_transform(img).unsqueeze(0).to(device)
-        digit = predict(img_tensor).item()
-        print(f"Predicted Digit: {digit}")
-        self.prediction_label.config(text=f"Prediction: {digit}")
+        self.digit = predict(img_tensor).item()
+        print(f"Predicted Digit: {self.digit}")
+        self.prediction_label.config(text=f"Prediction: {self.digit}")
 
     def train_model(self):
+        global writer, model_path
+        if writer is None:
+            timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+            logdir = f"tf_logs/{timestamp}"
+            writer = SummaryWriter(log_dir=logdir)
+            model_path = f"models/mnist_cnn_{timestamp}.pth"
+            print(f"Created new TensorBoard logdir: {logdir}")
+
         train()
         test()
         self.load_model()
@@ -246,11 +334,52 @@ class DigitRecognizerApp:
             try:
                 model.load_state_dict(torch.load(self.model_path, map_location=device))
                 self.is_model_loaded = True
+
+                model_timestamp = os.path.basename(self.model_path).split('_')[-1].split('.')[0]
+                logdir = f"tf_logs/{model_timestamp}"
+
+                global writer
+                writer = SummaryWriter(log_dir=logdir)
+
                 print(f"Model loaded from {self.model_path}")
-                messagebox.showinfo("Model Loaded", f"Model loaded successfully from:\n{self.model_path}")
+                print(f"Continuing TensorBoard logging in {logdir}")
+                messagebox.showinfo("Model Loaded",
+                                    f"Model loaded successfully from:\n{self.model_path}\n"
+                                    f"Continuing TensorBoard logging in:\n{logdir}")
 
             except Exception as e:
                 messagebox.showerror("Error", f"Failed to load model:\n{e}")
+
+    def save_image(self, folder, label):
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+        filename = os.path.join(folder, f"{uuid.uuid4().hex}_{label}.png")
+        self.image.save(filename)
+        self.clear_canvas()
+
+    def save_as_correct(self):
+        self.save_image("correct", self.digit)
+
+    def save_as_incorrect(self):
+        self.save_image("incorrect", simpledialog.askstring(title= "Label", prompt="Enter Label"))
+
+    def run_test(self):
+        if not self.is_model_loaded:
+            messagebox.showerror("Error", "Please load a model first!")
+            return
+
+        try:
+            global model_path
+            if model_path is None and self.model_path is not None:
+                model_path = self.model_path
+
+            results = test()
+            messagebox.showinfo("Test Complete",
+                                f"Model testing completed!\n"
+                                f"Test Accuracy: {results['test_accuracy']:.2f}%\n"
+                                f"Custom Test Accuracy: {results['custom_test_accuracy']:.2f}%")
+        except Exception as e:
+            messagebox.showerror("Test Error", f"Error during testing:\n{e}")
 
 if __name__ == "__main__":
     if torch.cuda.is_available():
